@@ -6,8 +6,17 @@
     --bg-color-dark:#FBFBFB;
     --bg-color-light:#ffffff;
 }
+@font-face {
+    font-family: 'Geomanist';
+    src: url('/src/fonts/geomanist-regular-webfont.woff') format('woff');
+}
 * {
     box-sizing: border-box;
+}
+
+  
+* {
+    font-family: 'Geomanist', Arial, sans-serif !important;
 }
 body {
     
