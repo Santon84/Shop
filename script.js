@@ -1,4 +1,3 @@
-
 const items = document.querySelectorAll('.review-wrapper');
 const itemsCount = items.length;
 
@@ -17,11 +16,11 @@ let left = 0;
 document.getElementById('r-arr').addEventListener('click', (e) => {
     e.preventDefault();
 
-    screenWidth = document.getElementById('review-1').offsetWidth; 
+    screenWidth = document.getElementById('review-1').offsetWidth;
     console.log(screenWidth);
     if (left <= screenWidth) {
-    left += screenWidth;
-    wrapper.style.left = `-${left}px`;
+        left += screenWidth;
+        wrapper.style.left = `-${left}px`;
     }
     console.log('right clicked');
 })
@@ -44,7 +43,7 @@ cartButtons.forEach(button => {
     button.addEventListener('click', (e) => {
 
         let btn = e.target.parentElement;
-        
+
 
         let price = btn.querySelector('.price').innerText;
         let title = btn.querySelector('.product-title').innerText;
@@ -56,9 +55,9 @@ cartButtons.forEach(button => {
             if (item.querySelector('.cart-item-title').innerText === title && !inCart) {
                 item.querySelector('.cart-item-qty-counter').value = `${Number(item.querySelector('.cart-item-qty-counter').value)+ 1}`;
                 inCart = true;
-                
+
                 let total = Number(item.querySelector('.cart-item-qty-counter').value) * Number(item.querySelector('.cart-item-price').innerText)
-                item.querySelector('.cart-item-total-price').innerText=total; 
+                item.querySelector('.cart-item-total-price').innerText = total;
             }
         })
         if (inCart) {
@@ -96,7 +95,7 @@ const openCart = () => {
 
 document.querySelector('.open-cart-button').addEventListener('click', () => {
     openCart();
-    
+
 })
 
 document.querySelector('.cart-close-button').addEventListener('click', () => {
@@ -112,15 +111,15 @@ document.querySelector('.cart-close-button').addEventListener('click', () => {
 
 document.addEventListener('change', (e) => {
     if (e.target.classList.contains("cart-item-qty-counter")) {
-    console.log(e.target.parentElement)
-    const item = e.target.parentElement;
-    
-    const price = item.querySelector('.cart-item-price').innerText;
-    const qty = item.querySelector('.cart-item-qty-counter').value;
-    let total = Number(qty) * Number(price);
-    item.querySelector('.cart-item-total-price').innerText=total;
-    renderCartTotal();
-    countCartItems();
+        console.log(e.target.parentElement)
+        const item = e.target.parentElement;
+
+        const price = item.querySelector('.cart-item-price').innerText;
+        const qty = item.querySelector('.cart-item-qty-counter').value;
+        let total = Number(qty) * Number(price);
+        item.querySelector('.cart-item-total-price').innerText = total;
+        renderCartTotal();
+        countCartItems();
     }
 })
 
@@ -151,7 +150,7 @@ const countCartItems = () => {
         itemsCount++;
     })
     const cartCountDisplay = document.querySelector('.icons');
-    cartCountDisplay.setAttribute('data-count',itemsCount);
+    cartCountDisplay.setAttribute('data-count', itemsCount);
 }
 countCartItems();
 
